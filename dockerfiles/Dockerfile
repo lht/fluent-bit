@@ -56,10 +56,10 @@ RUN apt-get update && \
     && rm -rf /var/lib/apt/lists/*
 
 # Must be run from root of repo
-WORKDIR /tmp/fluent-bit/
+WORKDIR /src/fluent-bit/
 COPY . ./
 
-WORKDIR /tmp/fluent-bit/build/
+WORKDIR /src/fluent-bit/build/
 RUN cmake -DFLB_RELEASE=On \
           -DFLB_JEMALLOC=On \
           -DFLB_TLS=On \
